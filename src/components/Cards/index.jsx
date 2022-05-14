@@ -1,6 +1,6 @@
-import Card from './Card'
+import Card from './../Card'
 
-function Cards({ cities }) {
+function Cards({cities}) {
   return (
     <>
     {

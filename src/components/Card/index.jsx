@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import s from './Card.module.css';
 
 function Card({max,min,name,img,onClose}) {
   return (
-    <article>
-        <button onClick={onClose}>Cerrar</button>
+    <article className={s.fondo}>
+        <button onClick={onClose}>X</button>
         <h2>{name}</h2>
         <h3>Min</h3>
         {min}
