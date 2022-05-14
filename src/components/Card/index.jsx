@@ -24,7 +24,11 @@ const CardStyle = styled.div`
 `;
 
 function grados(temp) {
-  return `${parseInt(temp - 245.19)} °`;
+  const kelvin = 273.15;
+  if(temp > kelvin) {
+    return `${parseInt(temp - 273.15)} °C`;
+  }
+  return `${temp} °C`;
 }
 
 function Card({max,min,name,img,onClose}) {
@@ -46,7 +50,7 @@ function Card({max,min,name,img,onClose}) {
         </div>   
         <div>
           <h3>Max</h3>
-          <p>{grados(max)}</p>       
+          <p>{grados(max)}</p>
         </div>
         <figure>
             <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="weather img" />
