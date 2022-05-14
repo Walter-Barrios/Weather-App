@@ -1,8 +1,9 @@
-import Card from './../Card'
+import Card from './../Card';
+import s from './Cards.module.css';
 
 function Cards({cities}) {
   return (
-    <>
+    <div className={s.contenedor}>
     {
       cities.map(city=>(
         <Card 
@@ -14,7 +15,7 @@ function Cards({cities}) {
         />
       ))
     }    
-    </>
+    </div>
   )
 }
 

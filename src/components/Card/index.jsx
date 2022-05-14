@@ -11,26 +11,49 @@ const center = css`
 `;
 
 const CardStyle = styled.div`
-  width: 25vw;
+  width: 20rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
   ${center}
+  background-color: ${props=>props.backgroundColor || "white"};
+  backdrop-filter: blur(5px);
+  position: relative;
+  margin: 10px auto;
 `;
+
+function grados(temp) {
+  return `${parseInt(temp - 245.19)} °`;
+}
 
 function Card({max,min,name,img,onClose}) {
   return (
-    <CardStyle>
-      <article className={s.fondo}>
-          <button onClick={onClose}>X</button>
-          <h2>{name}</h2>
+    <CardStyle backgroundColor="cadetblue">
+      {/*<article className={s.fondo} >*/}
+      <button style={{
+        width:'25px', 
+        height:'25px', 
+        background:'orange', 
+        borderRadius: '5px',
+        position: 'absolute',
+        right: 0}} onClick={onClose}>X</button>
+      <h2>{name}</h2>      
+      <article className={s.clima}>
+        <div>
           <h3>Min</h3>
-          {min}
+          <p>{grados(min)}</p>
+        </div>   
+        <div>
           <h3>Max</h3>
-          {max}
-          <figure>
-              <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="weather img" />
-          </figure>
-      </article>      
+          <p>{grados(max)}</p>       
+        </div>
+        <figure>
+            <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="weather img" />
+        </figure>
+      {/* </article>       */}
+      </article>
     </CardStyle>
-
   )
 }
 
