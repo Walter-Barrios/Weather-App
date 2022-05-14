@@ -41,7 +41,7 @@ function Card({max,min,name,img,onClose}) {
         background:'orange', 
         borderRadius: '5px',
         position: 'absolute',
-        right: 0}} onClick={onClose}>X</button>
+        right: 0}} title="Close this card." onClick={onClose}>X</button>
       <h2>{name}</h2>      
       <article className={s.clima}>
         <div>
@@ -52,9 +52,9 @@ function Card({max,min,name,img,onClose}) {
           <h3>Max</h3>
           <p>{grados(max)}</p>
         </div>
-        <figure>
-            <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="weather img" />
-        </figure>
+        <div>
+          <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="weather img" />
+        </div>
       {/* </article>       */}
       </article>
     </CardStyle>

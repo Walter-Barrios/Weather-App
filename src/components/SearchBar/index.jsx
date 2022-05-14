@@ -11,8 +11,8 @@ function SearchBar({onSearch}) {
   return (
     // <DivWrapper>
     <div className={s.contenedor}>
-      <input className={s.input} type="text" placeholder='Ciudad...' />
-      <button className={s.boton} onClick={onSearch}>Buscar</button>      
+      <input className={s.input} type="text" placeholder='City...' />
+      <button className={s.boton} onClick={onSearch} title="Add a city.">Search</button>
     </div>
     // </DivWrapper>
   )
