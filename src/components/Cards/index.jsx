@@ -1,22 +1,29 @@
 import Card from './../Card';
 import s from './Cards.module.css';
 
-function Cards({cities}) {
-  return (
-    <div className={s.contenedor}>
-    {
-      cities.map(city=>(
-        <Card 
-          max={city.main.temp_max}
-          min={city.main.temp_min}
-          name={city.name}
-          img={city.weather[0].icon}
-          onClose={() => alert(city.name)}          
-        />
-      ))
-    }    
-    </div>
-  )
+function Cards({cities, onClose}) {
+  if(cities) {
+    return (
+      <div className={s.contenedor}>
+      {
+        cities.map(city=>(
+          <Card 
+            max={city.max}
+            min={city.min}
+            name={city.name}
+            img={city.img}
+            onClose={() => onClose(city.id)}
+            key={city.id}
+          />
+        ))
+      }
+      </div>
+    );
+    }else {
+      return (
+        <div>No cities.</div>
+      );
+    }
 }
 
 export default Cards

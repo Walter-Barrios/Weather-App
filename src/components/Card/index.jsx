@@ -31,10 +31,9 @@ function grados(temp) {
   return `${temp} °C`;
 }
 
-function Card({max,min,name,img,onClose}) {
+function Card({max,min,name,img,onClose,id}) {
   return (
     <CardStyle backgroundColor="cadetblue">
-      {/*<article className={s.fondo} >*/}
       <button style={{
         width:'25px', 
         height:'25px', 
@@ -55,7 +54,6 @@ function Card({max,min,name,img,onClose}) {
         <div>
           <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="weather img" />
         </div>
-      {/* </article>       */}
       </article>
     </CardStyle>
   )

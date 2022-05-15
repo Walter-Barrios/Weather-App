@@ -1,20 +1,34 @@
-import React from 'react'
-// import styled from 'styled-components';
+import React, { useState } from 'react';
 import s from './SearchBar.module.css';
 
-
-// const DivWrapper = styled.div`
-//   background-color: value(--primary-bg-color);
-// `;
-
 function SearchBar({onSearch}) {
+  const [city, setCity] = useState('');
+
+  const handleInputChange = (e) => {
+    setCity(e.target.value)
+  }
+
   return (
-    // <DivWrapper>
-    <div className={s.contenedor}>
-      <input className={s.input} type="text" placeholder='City...' />
-      <button className={s.boton} onClick={onSearch} title="Add a city.">Search</button>
-    </div>
-    // </DivWrapper>
+    <form onSubmit={(e)=> {
+        e.preventDefault();
+        onSearch(city);
+        setCity('');
+      }}>
+      <div className={s.contenedor}>
+        <input 
+          className={s.input} 
+          id="inputCity" 
+          type="text" 
+          placeholder='City...' 
+          onChange={handleInputChange} 
+        />
+        <button 
+          type='submit' 
+          className={s.boton} 
+          title="Add a city."
+        >Search</button>
+      </div>
+    </form>
   )
 }
 
