@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Card.module.css';
 import styled, { css } from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const center = css`
   top: 0;
@@ -31,7 +32,7 @@ function grados(temp) {
   return `${temp} °C`;
 }
 
-function Card({max,min,name,img,onClose}) {
+function Card({max,min,name,img,onClose,id}) {
   return (
     <CardStyle backgroundColor="cadetblue">
       <button style={{
@@ -41,7 +42,9 @@ function Card({max,min,name,img,onClose}) {
         borderRadius: '5px',
         position: 'absolute',
         right: 0}} title="Close this card." onClick={onClose}>X</button>
-      <h2>{name}</h2>      
+      <NavLink to={`/city/${id}`} >
+        <h2>{name}</h2>  
+      </NavLink>
       <article className={s.clima}>
         <div>
           <h3>Min</h3>

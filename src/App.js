@@ -3,6 +3,9 @@ import './App.css'; // Estilos globales.
 import Cards from './components/Cards';
 import Nav from './components/Nav';
 import env from 'react-dotenv';
+import { Route } from 'react-router-dom';
+import About from './components/About';
+import City from './components/City';
 
 function App() {
   const [cities, setCities] = useState([]);
@@ -55,10 +58,22 @@ function App() {
   return (
     <div className="App">
       <Nav onSearch={onSearch} />
-      {/* <hr /> */}
-      <div>
-        <Cards cities={cities} onClose={onClose}/>
-      </div>
+      <Route 
+        exact 
+        path='/' 
+        render={() => <Cards cities={cities} onClose={onClose} />}
+      />
+      <Route 
+        exact 
+        path='/about'
+        component={About}
+      />
+      <Route
+        path='/city/:idCity' 
+        render={({match}) => (
+          <City match={match} cities={cities} />
+        )}
+      />
     </div>
   );
 }

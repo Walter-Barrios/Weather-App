@@ -17,3 +17,12 @@ html {
 body {
   margin: 0;
 }
+
+a {
+  text-decoration: none;
+  color: var(--primary-bg-color);
+}
+
+a:active {
+  color: var(--primary-font-color);
+}
