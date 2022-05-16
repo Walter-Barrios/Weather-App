@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import './App.css'; // Estilos globales.
 import Cards from './components/Cards';
 import Nav from './components/Nav';
+import env from 'react-dotenv';
 
 function App() {
   const [cities, setCities] = useState([]);
 
-  const apiKey = "4ae2636d8dfbdc3044bede63951a019b";
-
   function onSearch(city) {
     if(city) {
-      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${env.API_KEY}&units=metric`)
       .then(r => r.json())
       .then((recurso) => {
         if(recurso.main !== undefined){
