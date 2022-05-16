@@ -17,10 +17,10 @@ function SearchBar({onSearch}) {
       <div className={s.contenedor}>
         <input 
           className={s.input} 
-          id="inputCity" 
           type="text" 
           placeholder='City...' 
           onChange={handleInputChange} 
+          value={city}
         />
         <button 
           type='submit' 

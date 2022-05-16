@@ -1,4 +1,8 @@
 .contenedor {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
 }

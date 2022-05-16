@@ -36,7 +36,6 @@ function App() {
         } else {
           alert("City not found");
         }
-        document.querySelector('#inputCity').value = '';
       });
     }else {
       alert("You must enter a city.");
@@ -50,7 +49,7 @@ function App() {
   return (
     <div className="App">
       <Nav onSearch={onSearch} />
-      <hr />
+      {/* <hr /> */}
       <div>
         <Cards cities={cities} onClose={onClose}/>
       </div>

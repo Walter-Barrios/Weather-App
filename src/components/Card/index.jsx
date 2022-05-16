@@ -31,7 +31,7 @@ function grados(temp) {
   return `${temp} °C`;
 }
 
-function Card({max,min,name,img,onClose,id}) {
+function Card({max,min,name,img,onClose}) {
   return (
     <CardStyle backgroundColor="cadetblue">
       <button style={{
