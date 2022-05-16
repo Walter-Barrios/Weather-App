@@ -48,6 +48,21 @@ function City() {
             {city && (
                 <>
                     <h2>{city.name}</h2>
+                    <hr style={{width:'95%'}} />
+                    <article className={s.clima}>
+                        <div>
+                            <h3>Min</h3>
+                            <p>{grados(city.min)}</p>
+                        </div>   
+                        <div>
+                            <h3>Max</h3>
+                            <p>{grados(city.max)}</p>
+                        </div>
+                        <div>
+                            <img src={`http://openweathermap.org/img/wn/${city.img}@2x.png`} alt="weather icon" />
+                        </div>
+                    </article>
+                    <hr style={{width:'95%'}} />
                     <article className={s.clima}>
                         <div>
                             <h3>Temperature:</h3>
@@ -62,6 +77,7 @@ function City() {
                             <p>{city.wind} km/h</p>
                         </div>
                     </article>
+                    <hr style={{width:'95%'}} />
                     <article className={s.clima}>
                         <div>
                             <h3>Clouds:</h3>
