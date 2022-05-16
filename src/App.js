@@ -31,6 +31,13 @@ function App() {
               longitud: recurso.coord.lon
             };
             setCities(oldCities => [...oldCities, ciudad]);
+            // setCities(oldCities => {
+            //   if(oldCities.some(city => city.name === ciudad.name)) {
+            //     return oldCities
+            //   }else {
+            //     return [...oldCities, ciudad]
+            //   }
+            // });
           }
         } else {
           alert("City not found");

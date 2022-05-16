@@ -20,6 +20,7 @@ function SearchBar({onSearch}) {
           type="text" 
           placeholder='City...' 
           onChange={handleInputChange} 
+          // onChange={(e)=>handleInputChange(e)}
           value={city}
         />
         <button 
