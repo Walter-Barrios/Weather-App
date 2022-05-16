@@ -1,2 +1,2 @@
 # Weather-App
-Wheater app with React
+Wheater app with React - Hooks
