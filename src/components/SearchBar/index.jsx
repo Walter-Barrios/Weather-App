@@ -4,10 +4,6 @@ import s from './SearchBar.module.css';
 function SearchBar({onSearch}) {
   const [city, setCity] = useState('');
 
-  const handleInputChange = (e) => {
-    setCity(e.target.value)
-  }
-
   return (
     <form onSubmit={(e)=> {
         e.preventDefault();
@@ -19,8 +15,7 @@ function SearchBar({onSearch}) {
           className={s.input} 
           type="text" 
           placeholder='City...' 
-          onChange={handleInputChange} 
-          // onChange={(e)=>handleInputChange(e)}
+          onChange={e => setCity(e.target.value)}
           value={city}
         />
         <button 

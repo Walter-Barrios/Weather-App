@@ -55,7 +55,7 @@ function Card({max,min,name,img,onClose,id}) {
           <p>{grados(max)}</p>
         </div>
         <div>
-          <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="weather img" />
+          <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="weather icon" />
         </div>
       </article>
     </CardStyle>
