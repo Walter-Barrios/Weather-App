@@ -27,12 +27,12 @@ function App() {
 
   return (
     <div className="App">
-      <Nav onSearch={onSearch} />
+      <Nav />
       <Switch>
         <Route 
           exact 
           path='/' 
-          render={() => <Cards cities={cities} onClose={onClose} />}
+          render={() => <Cards cities={cities} onClose={onClose} onSearch={onSearch} />}
         />
         <Route
           path='/city/:idCity' 

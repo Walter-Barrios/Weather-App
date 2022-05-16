@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchBar from './../SearchBar';
 import { NavLink } from 'react-router-dom';
 
 // Estilos en línea.
@@ -7,7 +6,7 @@ const h1Style = {
   marginBottom: 0
 }
 
-function Nav({onSearch}) {
+function Nav() {
   return (
     <>
       <div style={{ color: 'yellow' }} className='App-header'>
@@ -18,7 +17,6 @@ function Nav({onSearch}) {
         <NavLink exact to='/about'>
           About
         </NavLink>
-        <SearchBar onSearch={onSearch} />
       </div>
     </>
   )

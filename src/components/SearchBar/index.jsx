@@ -5,7 +5,7 @@ function SearchBar({onSearch}) {
   const [city, setCity] = useState('');
 
   return (
-    <form onSubmit={(e)=> {
+    <form className={s.header} onSubmit={(e)=> {
         e.preventDefault();
         onSearch(city);
         setCity('');
