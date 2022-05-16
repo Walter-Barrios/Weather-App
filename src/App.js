@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 import './App.css'; // Estilos globales.
 import Cards from './components/Cards';
 import Nav from './components/Nav';
-import env from 'react-dotenv';
 import { Route } from 'react-router-dom';
 import About from './components/About';
 import City from './components/City';
+import { Switch } from 'react-router-dom';
+import Error404 from './components/Error404';
+
+const apiKey = process.env.REACT_APP_API_KEY;
 
 function App() {
   const [cities, setCities] = useState([]);
 
   function onSearch(city) {
     if(city) {
-      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${env.API_KEY}&units=metric`)
+      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
       .then(r => r.json())
       .then((recurso) => {
         if(recurso.main !== undefined){
@@ -55,25 +58,29 @@ function App() {
     setCities(oldCities => oldCities.filter(c => c.id !== id));
   }
 
+  function onFilter(idCity) {
+    const aCity = cities.find(city => city.id === parseInt(idCity));
+    return aCity;
+  }
+
   return (
     <div className="App">
       <Nav onSearch={onSearch} />
-      <Route 
-        exact 
-        path='/' 
-        render={() => <Cards cities={cities} onClose={onClose} />}
-      />
-      <Route 
-        exact 
-        path='/about'
-        component={About}
-      />
-      <Route
-        path='/city/:idCity' 
-        render={({match}) => (
-          <City match={match} cities={cities} />
-        )}
-      />
+      <Switch>
+        <Route 
+          exact 
+          path='/' 
+          render={() => <Cards cities={cities} onClose={onClose} />}
+        />
+        <Route
+          path='/city/:idCity' 
+          render={({match}) => (
+            <City city={onFilter(match.params.idCity)} match={match} />
+          )}
+        />
+        <Route path='/about' component={About} />
+        <Route path='*' component={Error404} />
+      </Switch>
     </div>
   );
 }
