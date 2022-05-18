@@ -1,3 +1,8 @@
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
+
 function fetchCity(city, setCities) {
     const apiKey = process.env.REACT_APP_API_KEY;
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`,)
@@ -19,14 +24,24 @@ function fetchCity(city, setCities) {
             };
             setCities( oldCities => {
                 if(oldCities.some(c => c.name === city.name)) {
-                    alert('That city is already found.');
+                    MySwal.fire({
+                        title: `${city.name}`,
+                        text: 'That city is already found.',
+                        icon: 'warning',
+                        confirmButtonText: 'Cool'
+                    })
                     return oldCities;
                 }else {
                     return [...oldCities, city];
                 }
             })
         }else {
-            alert('City not found.');
+            MySwal.fire({
+                title: `"${city}"`,
+                text: 'City not found.',
+                icon: 'warning',
+                confirmButtonText: 'Cool'
+            })
         }
     });
 }

@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import './App.css'; // Estilos globales.
 import Cards from './../../components/Cards';
 import Nav from './../../components/Nav';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import About from './../../components/About';
 import City from './../../components/City';
-import { Switch } from 'react-router-dom';
 import Error404 from './../../components/Error404';
 import fetchCity from './../../services/fetchCity';
 
