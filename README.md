@@ -1,2 +1,3 @@
 # Weather-App
-Wheater app with React - Hooks
+SPA with React - Hooks
+OpenWeather API
