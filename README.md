@@ -1,3 +1,3 @@
 # Weather-App
-SPA with React - Hooks
-OpenWeather API
+- SPA with React - Hooks
+- OpenWeather API
