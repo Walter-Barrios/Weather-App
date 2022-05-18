@@ -27,8 +27,12 @@ function fetchCity(city, setCities) {
                     MySwal.fire({
                         title: `${city.name}`,
                         text: 'That city is already found.',
-                        icon: 'warning',
-                        confirmButtonText: 'Cool'
+                        icon: 'info',
+                        confirmButtonText: 'Cool',
+                        confirmButtonColor: 'yellow',
+                        customClass: {
+                            confirmButton: 'black'
+                        },
                     })
                     return oldCities;
                 }else {
@@ -39,8 +43,12 @@ function fetchCity(city, setCities) {
             MySwal.fire({
                 title: `"${city}"`,
                 text: 'City not found.',
-                icon: 'warning',
-                confirmButtonText: 'Cool'
+                icon: 'error',
+                confirmButtonText: 'Ok',
+                confirmButtonColor: 'yellow',
+                customClass: {
+                    confirmButton: 'black'
+                },
             })
         }
     });
