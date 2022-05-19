@@ -3,7 +3,7 @@ import s from './Cards.module.css';
 import SearchBar from '../SearchBar';
 
 function Cards({cities, onClose, onSearch}) {
-  if(cities) {
+  if(cities.length) {
     return (
       <>
         <SearchBar onSearch={onSearch} />
@@ -28,7 +28,7 @@ function Cards({cities, onClose, onSearch}) {
     return (
       <>
         <SearchBar onSearch={onSearch} />
-        <div>No cities.</div>
+        <h2>No cities.</h2>
       </>
      );
   }
