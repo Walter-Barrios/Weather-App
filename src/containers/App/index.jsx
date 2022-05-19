@@ -19,10 +19,9 @@ function App() {
     setCities(oldCities => oldCities.filter(c => c.id !== id));
   }
 
-  function onFilter(idCity) {
-    const aCity = cities.find(city => city.id === parseInt(idCity));
-    return aCity;
-  }
+  // function onFilter(idCity) {
+  //   return cities.find(city => city.id === parseInt(idCity));
+  // }
 
   return (
     <div className="App">
@@ -33,12 +32,15 @@ function App() {
           path='/' 
           render={() => <Cards cities={cities} onClose={onClose} onSearch={onSearch} />}
         />
-        <Route
+        {/* <Route
           path='/city/:idCity' 
           render={({match}) => (
             <City city={onFilter(match.params.idCity)} match={match} />
           )}
-        />
+        /> */}
+        <Route path='/city/:idCity'>
+          <City />
+        </Route>
         <Route path='/about' component={About} />
         <Route path='*' component={Error404} />
       </Switch>

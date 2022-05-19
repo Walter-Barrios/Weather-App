@@ -15,7 +15,8 @@ function fetchCityById(cityId, setCity) {
                 weather: resource.weather[0].main,
                 clouds: resource.clouds.all,
                 latitud: resource.coord.lat,
-                longitud: resource.coord.lon,                
+                longitud: resource.coord.lon, 
+                key: resource.id               
             };
             setCity(city);
         }else {
