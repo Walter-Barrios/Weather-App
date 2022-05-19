@@ -38,7 +38,7 @@ function Card({max,min,name,img,onClose,id}) {
       <button style={{
         width:'25px', 
         height:'25px', 
-        background:'orange', 
+        background:'yellow', 
         borderRadius: '5px',
         position: 'absolute',
         right: 0}} title="Close this card." onClick={onClose}>X</button>
