@@ -4,6 +4,9 @@ import fetchCityById from './../../services/fetchCityById';
 import s from './City.module.css';
 import styled, { css } from 'styled-components';
 
+import { MapContainer, TileLayer } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
+
 const center = css`
   top: 0;
   bottom: 0;
@@ -48,7 +51,12 @@ function City() {
             {city && (
                 <>
                     <h2>{city.name}</h2>
-                    <hr style={{width:'95%'}} />
+                    <MapContainer center={[city.latitud, city.longitud]} zoom={14} scrollWheelZoom={true} style={{ width:'100%', height:'320px' }} >
+                        <TileLayer
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                    </MapContainer>
                     <article className={s.clima}>
                         <div>
                             <h3>Min</h3>

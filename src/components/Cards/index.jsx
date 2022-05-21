@@ -5,7 +5,7 @@ import SearchBar from '../SearchBar';
 function Cards({cities, onClose, onSearch}) {
   if(cities.length) {
     return (
-      <>
+      <main>
         <SearchBar onSearch={onSearch} />
         <div className={s.contenedor}>
         {
@@ -22,14 +22,14 @@ function Cards({cities, onClose, onSearch}) {
           ))
         }
         </div>
-      </>
+      </main>
     );
   }else {
     return (
-      <>
+      <main>
         <SearchBar onSearch={onSearch} />
         <h2>No cities.</h2>
-      </>
+      </main>
      );
   }
 }

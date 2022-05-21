@@ -9,7 +9,7 @@ const h1Style = {
 function Nav() {
   return (
     <>
-      <div style={{ color: 'yellow' }} className='App-header'>
+      <header style={{ color: 'yellow' }} className='App-header'>
         <h1 style={h1Style}>Weather App</h1>
         <div className={s.nav}>
           <NavLink exact to='/'>
@@ -19,7 +19,7 @@ function Nav() {
             About
           </NavLink>          
         </div>
-      </div>
+      </header>
     </>
   )
 }
