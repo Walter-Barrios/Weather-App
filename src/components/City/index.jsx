@@ -51,7 +51,7 @@ function City() {
             {city && (
                 <>
                     <h2>{city.name}</h2>
-                    <MapContainer center={[city.latitud, city.longitud]} zoom={14} scrollWheelZoom={true} style={{ width:'100%', height:'320px' }} >
+                    <MapContainer center={[city.latitud, city.longitud]} zoom={13} scrollWheelZoom={true} style={{ width:'100%', height:'320px' }} >
                         <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
